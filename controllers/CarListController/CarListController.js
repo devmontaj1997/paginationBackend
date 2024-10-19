@@ -14,14 +14,14 @@ const prisma = new PrismaClient();
 
 export const getCar = expressAsyncHandler(async (req, res) => {
   const page = Number(req.query.page || 1);
-  const limit = Number(req.query.limit || 9) ;
+  const limit = Number(req.query.limit || 3) ;
 
   // validation
   if (page <= 0) {
     page = 1;
   }
   if (limit < 0 || limit > 100) {
-    limit = 9;
+    limit = 3;
   }
 
   // count skip
